@@ -5,13 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f67adfdc-2cab-46f3-9d5e-961760ef0824" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/almoxarifado/src/main/java/br/senai/sc/almoxarifado/security/AutenticacaoConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/almoxarifado/src/main/java/br/senai/sc/almoxarifado/security/AutenticacaoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/almoxarifado/src/main/java/br/senai/sc/almoxarifado/security/AutenticacaoFiltro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/almoxarifado/src/main/java/br/senai/sc/almoxarifado/security/AutenticacaoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/almoxarifado/src/main/java/br/senai/sc/almoxarifado/security/TokenDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/almoxarifado/src/main/java/br/senai/sc/almoxarifado/security/UserDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/almoxarifado/src/main/java/br/senai/sc/almoxarifado/model/entities/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/almoxarifado/src/main/java/br/senai/sc/almoxarifado/model/entities/Produto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End/src/app/principal/anexos-item/anexos-item.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End/src/app/principal/anexos-item/anexos-item.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End/src/app/principal/anexos-item/anexos-item.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End/src/app/principal/anexos-item/anexos-item.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End/src/app/principal/anexos-item/anexos-item.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End/src/app/principal/anexos-item/anexos-item.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End/src/app/principal/item-lista/item.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End/src/app/principal/item-lista/item.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End/src/app/principal/item-lista/item.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End/src/app/principal/item-lista/item.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End/src/app/principal/item/item.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End/src/app/principal/item/item.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End/src/app/principal/item/item.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End/src/app/principal/item/item.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End/src/app/principal/modal-editar-item/modal-editar-item.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End/src/app/principal/modal-editar-item/modal-editar-item.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End/src/app/principal/modal-editar-item/modal-editar-item.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End/src/app/principal/modal-editar-item/modal-editar-item.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End/src/app/principal/modal-reservar-item/modal-reservar-item.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End/src/app/principal/modal-reservar-item/modal-reservar-item.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-End/src/app/principal/modal-reservar-item/modal-reservar-item.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-End/src/app/principal/modal-reservar-item/modal-reservar-item.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,15 +46,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../WEG-SSM/back-end-maven" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="restartRequiresConfirmation" value="false" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/padrao/Documents/GitHub/AlmaSis/Back-End-Maven&quot;
+  }
+}</component>
   <component name="RunManager">
     <configuration name="AlmoxarifadoApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.senai.sc.almoxarifado.AlmoxarifadoApplication" />
@@ -90,6 +94,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

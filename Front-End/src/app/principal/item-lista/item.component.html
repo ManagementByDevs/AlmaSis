@@ -3,13 +3,12 @@
     <tr
       *ngFor="let item of itens"
       id="containerItem"
-      (click)="abrirModalReserva($event, item)"
     >
-      <td class="itemTabela">{{ item.nome }}</td>
-      <td class="itemTabela">
+      <td (click)="abrirModalReserva('0', item)" class="itemTabela">{{ item.nome }}</td>
+      <td (click)="abrirModalReserva('0', item)" class="itemTabela">
         {{ item.descartavel ? "Descartável" : "Não descartável" }}
       </td>
-      <td class="itemTabela">{{ item.quantidade }} UN</td>
+      <td (click)="abrirModalReserva('0', item)" class="itemTabela">{{ item.quantidade }} UN</td>
       <td class="itemTabela">
         <div class="ferramentas">
           <app-favorito-item

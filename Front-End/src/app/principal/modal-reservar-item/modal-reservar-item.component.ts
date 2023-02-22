@@ -38,6 +38,7 @@ export class ModalReservarItem implements OnInit {
 
   ngOnInit() {
 
+    console.log(this.item);
     if (this.item.imagem) {
       this.imagemUrl = "data:image/png;base64," + this.item.imagem.dados;
     } else {

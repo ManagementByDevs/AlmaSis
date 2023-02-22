@@ -20,24 +20,25 @@
                     <thead>
                         <tr>
                             <th scope="col">
-                                Descrição do anexo
+                                Nome
                             </th>
                             <th scope="col" class="linkAnexo">
-                                Link
+                                Baixar
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="linhaTabelaAnexos" *ngFor="let anexo of item.anexos">
+                        <tr class="linhaTabelaAnexos" *ngFor="let anexo of item.anexos; let i = index;">
                             <td class="linhaDescricaoAnexo">
                                 <p class="descricaoAnexo">
-                                    {{ anexo.descricao }}
+                                    {{ anexo.nome }}
                                 </p>
                             </td>
-                            <td class="linkAnexo">
-                                <a mat-buton href="{{ anexo.anexo }}" target="_blank">
-                                    Anexo
-                                </a>
+
+
+                            <!-- Colocar ícone de download dentro do td no lugar do texto -->
+                            <td class="linkAnexo" (click)="baixarAnexo(i)">
+                                Baixar
                             </td>
                         </tr>
                     </tbody>

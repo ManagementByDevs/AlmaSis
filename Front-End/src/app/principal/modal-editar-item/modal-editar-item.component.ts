@@ -50,10 +50,22 @@ export class ModalEditarItem implements OnInit {
 
         // Preenchendo os inputs com os dados do item
         this.nomeProduto = this.item.nome;
-        this.classificacaoSelect = this.item.classificacao;
+        this.classificacaoSelect = this.item.classificacao.id;
         this.qtdItem = this.item.quantidade;
-        this.imagemItem = this.item.imagem;
-        this.listaLocalizacoesEscolhidas = this.item.localizacoes;
+        // this.listaLocalizacoesEscolhidas = this.item.localizacoes;
+
+        console.log(this.listaLocalizacoesEscolhidas);
+        console.log(this.item.localizacoes);
+
+        if (this.item.imagem) {
+            this.imagemItem = "data:image/png;base64," + this.item.imagem.dados;
+        }
+    }
+
+    base64ToArrayBuffer(base64: any) {
+        const binaryString = window.atob(base64);
+        const bytes = new Uint8Array(binaryString.length);
+        return bytes.map((byte, i) => binaryString.charCodeAt(i));
     }
 
     buscarClassificacoes() {
@@ -72,7 +84,6 @@ export class ModalEditarItem implements OnInit {
     carregarImagem(event: any) {
         let imagem = document.querySelector("#imagemItem") as HTMLImageElement;
         imagem.src = URL.createObjectURL(event.target.files[0]);
-        this.imagemItem = event.target.files[0];
     }
 
     // Função para mudar o modo de colocar classificação (cadastrar nova / usar existente)
@@ -121,6 +132,5 @@ export class ModalEditarItem implements OnInit {
 
     toggleModalDetalhes() {
         this.modalDetalhes = !this.modalDetalhes;
-        document.documentElement.style.overflow = this.modalDetalhes ? "hidden" : "auto";
     }
 }

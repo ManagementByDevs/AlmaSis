@@ -27,7 +27,7 @@ export class ItemListaComponent implements OnInit {
 
   // Input com o objeto do item recebido da lista
   @Input() item = { id: 0, nome: "", descricao: "", quantidade: 0, descartavel: false, imagem: "", classificacao: { id: 0, classificacao: '' }, anexos: [{ descricao: "", anexo: "" }] };
-  @Input() itens = [{ id: 0, nome: "", descricao: "", quantidade: 0, descartavel: false, imagem: "", classificacao: { id: 0, classificacao: '' }, anexos: [{ descricao: "", anexo: "" }] }];
+  @Input() itens: any[] = [];
 
   itemModalReservar: any;
 
@@ -86,9 +86,7 @@ export class ItemListaComponent implements OnInit {
   }
 
   // Função para deixar visível o modal de reserva do item
-  abrirModalReserva(event: any, item: any) {
-    let idIcone = event.path[0].id;
-
+  abrirModalReserva(idIcone: any, item: any) {
     switch (idIcone) {
       case "iconeEditar":
         this.abrirModalEditar();

@@ -107,11 +107,13 @@ export class ItemComponent implements OnInit {
 
   // Função para abrir o modal de edição do item
   abrirModalEditar() {
+    document.documentElement.style.overflow = "hidden"
     this.modalEditar = true;
   }
 
   // Função para abrir o modal de histórico do item
   abrirHistorico() {
+    document.documentElement.style.overflow = "hidden"
     this.modalHistorico = true;
   }
 
@@ -163,6 +165,7 @@ export class ItemComponent implements OnInit {
         this.modalReservar = true;
         break;
       case 3:
+        document.documentElement.style.overflow = "visible"
         this.modalEditar = false;
         if (event == "editar") {
           this.feedbackEditarItem = true;
@@ -187,6 +190,7 @@ export class ItemComponent implements OnInit {
         break;
       case 5:
         this.modalHistorico = false;
+        document.documentElement.style.overflow = "visible"
         break;
       case 6:
         this.modalAdicionarSacola = false;
