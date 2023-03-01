@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Almoxarifado-Mobile</string>
+    <string name="esqueci_senha"><u>Esqueci a senha</u></string>
+    <string name="entrar"><u>Entrar</u></string>
+    <string name="stringEsqueciSenha">Caro Usuário, enviaremos \num código de verificação no \nseu email para \nidentificação.</string>
+</resources>
