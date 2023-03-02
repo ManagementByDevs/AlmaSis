@@ -22,6 +22,8 @@
         <activity android:name=".HomeActivity"></activity>
         <activity android:name=".CadastroActivity"></activity>
         <activity android:name=".EsqueciSenha1Activity"></activity>
+        <activity android:name=".EsqueciSenha2Activity"></activity>
+        <activity android:name=".EsqueciSenha3Activity"></activity>
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
 
