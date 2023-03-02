@@ -22,7 +22,7 @@ import java.util.Optional;
 
 @Controller
 @AllArgsConstructor
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RequestMapping("/alma_sis/usuario")
 public class UsuarioController {
     private UsuarioService usuarioService;
@@ -50,6 +50,23 @@ public class UsuarioController {
         }
 
         return ResponseEntity.status(HttpStatus.FOUND).body(usuarioService.findById(email).get());
+    }
+
+    @GetMapping("/login")
+    public ResponseEntity<Object> login(@RequestParam(value = "nome") String nome, @RequestParam(value = "senha") String senha) {
+        Usuario usuario = null;
+        if(usuarioService.existsByNomeUsuarioAndSenhaUsuario(nome, senha)) {
+          usuario = usuarioService.findByNomeUsuarioAndSenhaUsuario(nome, senha);
+        }
+
+        if(usuarioService.existsByEmailUsuarioAndSenhaUsuario(nome, senha)) {
+            usuario = usuarioService.findByEmailUsuarioAndSenhaUsuario(nome, senha);
+        }
+
+        if(usuario == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuário não encontrado!");
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(usuario);
     }
 
     @GetMapping("/tipo-usuario/{tipoUsuario}")
