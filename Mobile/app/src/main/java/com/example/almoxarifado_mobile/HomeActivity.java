@@ -1,11 +1,14 @@
 package com.example.almoxarifado_mobile;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.almoxarifado_mobile.utils.ProdutoActivity;
 import com.example.almoxarifado_mobile.utils.ProdutoAdapter;
 
 public class HomeActivity extends AppCompatActivity {
@@ -22,6 +25,11 @@ public class HomeActivity extends AppCompatActivity {
 
         buscarItens();
         setRecyclerView();
+    }
+
+    public void produto(View view) {
+        Intent switchActivityIntent = new Intent(this, ProdutoActivity.class);
+        startActivity(switchActivityIntent);
     }
 
     private void setRecyclerView() {
