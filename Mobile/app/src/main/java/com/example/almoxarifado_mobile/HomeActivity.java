@@ -1,6 +1,8 @@
 package com.example.almoxarifado_mobile;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -35,5 +37,10 @@ public class HomeActivity extends AppCompatActivity {
 
     private void buscarItens() {
 
+    }
+
+    public void abrirReservas(View view) {
+        Intent intent = new Intent(this, ReservasActivity.class);
+        startActivity(intent);
     }
 }
