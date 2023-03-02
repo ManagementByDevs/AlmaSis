@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/inputNome"
         style="@style/inputLogin"
         android:layout_width="0dp"
         android:layout_height="49dp"
@@ -51,7 +51,7 @@
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/inputNome" />
 
     <Button
         android:id="@+id/button"
@@ -148,7 +148,7 @@
         android:background="@null"
         android:onClick="mudarSenha"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/inputNome"
         app:srcCompat="@drawable/olho_aberto" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

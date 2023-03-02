@@ -33,4 +33,12 @@ public interface UsuarioRepository extends JpaRepository<Usuario, String> {
     Integer countByVisibilidadeAndTipoUsuarioIsNotAndNomeUsuarioContainingOrVisibilidadeAndTipoUsuarioIsNotAndEmailUsuarioContaining(Boolean visibilidade, TipoUsuario tipoUsuario, String nomeUsuario, Boolean visibilidade2, TipoUsuario tipoUsuario2, String emailUsuario);
 
     List<Usuario> findByVisibilidadeAndTipoUsuarioIsNotAndNomeUsuarioContainingOrVisibilidadeAndTipoUsuarioIsNotAndEmailUsuarioContaining(Boolean visibilidade, TipoUsuario tipoUsuario, String nomeUsuario, Boolean visibilidade2, TipoUsuario tipoUsuario2, String emailUsuario, Pageable pageable);
+
+    Boolean existsByNomeUsuarioAndSenhaUsuario(String nome, String senha);
+
+    Boolean existsByEmailUsuarioAndSenhaUsuario(String email, String senha);
+
+    Usuario findByNomeUsuarioAndSenhaUsuario(String nome, String senha);
+
+    Usuario findByEmailUsuarioAndSenhaUsuario(String email, String senha);
 }
