@@ -11,7 +11,7 @@ public class Produto {
     private String nome;
     private String caracteristicas;
     private Boolean descartavel;
-    private Imagem imagem;
+//    private Imagem imagem;
     private Boolean visibilidade;
 
     private Classificacao classificacao;
@@ -71,13 +71,13 @@ public class Produto {
         this.descartavel = descartavel;
     }
 
-    public Imagem getImagem() {
-        return imagem;
-    }
-
-    public void setImagem(Imagem imagem) {
-        this.imagem = imagem;
-    }
+//    public Imagem getImagem() {
+//        return imagem;
+//    }
+//
+//    public void setImagem(Imagem imagem) {
+//        this.imagem = imagem;
+//    }
 
     public Boolean getVisibilidade() {
         return visibilidade;
@@ -108,6 +108,18 @@ public class Produto {
     }
 
     public void setAnexos(List<Anexo> anexos) {
+        this.anexos = anexos;
+    }
+
+    public Produto(Long id, Integer quantidade, String nome, String caracteristicas, Boolean descartavel, Boolean visibilidade, Classificacao classificacao, Set<Localizacao> localizacoes, List<Anexo> anexos) {
+        this.id = id;
+        this.quantidade = quantidade;
+        this.nome = nome;
+        this.caracteristicas = caracteristicas;
+        this.descartavel = descartavel;
+        this.visibilidade = visibilidade;
+        this.classificacao = classificacao;
+        this.localizacoes = localizacoes;
         this.anexos = anexos;
     }
 }
