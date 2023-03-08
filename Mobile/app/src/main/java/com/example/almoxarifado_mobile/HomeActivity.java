@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.almoxarifado_mobile.entities.Produto;
+import com.example.almoxarifado_mobile.listeners.ProdutoListener;
 import com.example.almoxarifado_mobile.service.ProdutoService;
 import com.example.almoxarifado_mobile.utils.ProdutoAdapter;
 
@@ -22,7 +23,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements ProdutoListener{
 
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
@@ -39,6 +40,7 @@ public class HomeActivity extends AppCompatActivity {
         setRecyclerView();
     }
 
+<<<<<<< Updated upstream
     public void cadastroAutomatico() {
         listaProdutos.add(new Produto(Long.parseLong("1"), 10, "Abraçadeira", "Pequenas", true, true, null, null, null));
     }
@@ -48,12 +50,18 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(switchActivityIntent);
     }
 
+=======
+>>>>>>> Stashed changes
     private void setRecyclerView() {
         recyclerView = findViewById(R.id.lista);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
+<<<<<<< Updated upstream
         adapter = new ProdutoAdapter(listaProdutos);
+=======
+        adapter = new ProdutoAdapter(lista, this);
+>>>>>>> Stashed changes
         recyclerView.setAdapter(adapter);
     }
 
@@ -82,8 +90,15 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
+<<<<<<< Updated upstream
     public void abrirReservas(View view) {
         Intent intent = new Intent(this, ReservasActivity.class);
         startActivity(intent);
+=======
+    @Override
+    public void onProductClick(String product) {
+        Intent switchActivityIntent = new Intent(this, ProdutoActivity.class);
+        startActivity(switchActivityIntent);
+>>>>>>> Stashed changes
     }
 }

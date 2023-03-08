@@ -1,15 +1,21 @@
 package com.example.almoxarifado_mobile.utils;
 
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.almoxarifado_mobile.ProdutoActivity;
 import com.example.almoxarifado_mobile.R;
+<<<<<<< Updated upstream
 import com.example.almoxarifado_mobile.entities.Produto;
 
 import java.util.ArrayList;
@@ -45,7 +51,34 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ViewHold
     }
 
     public ProdutoAdapter(ArrayList<Produto> dataSet) {
+=======
+import com.example.almoxarifado_mobile.listeners.ProdutoListener;
+
+public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ViewHolder> {
+
+    public ProdutoListener produtoListener;
+    private String[] localDataSet;
+
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        private ConstraintLayout linearLayout;
+        private final TextView textView;
+
+        public ViewHolder(View view) {
+            super(view);
+            linearLayout = (ConstraintLayout) view.findViewById(R.id.item);
+            textView = (TextView) view.findViewById(R.id.textView);
+        }
+
+
+        public TextView getTextView() {
+            return textView;
+        }
+    }
+
+    public ProdutoAdapter(String[] dataSet, ProdutoListener listener) {
+>>>>>>> Stashed changes
         localDataSet = dataSet;
+        produtoListener = listener;
     }
 
     @NonNull
@@ -58,6 +91,7 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
+<<<<<<< Updated upstream
         viewHolder.getNomeProduto().setText(localDataSet.get(position).getNome());
         viewHolder.getQtdProduto().setText((localDataSet.get(position).getQuantidade()).toString());
 
@@ -66,6 +100,17 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ViewHold
         } else {
             viewHolder.getTextoDescartavel().setText("Não Descartável");
         }
+=======
+        int posicao = position;
+        viewHolder.getTextView().setText(localDataSet[position]);
+
+        viewHolder.linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                produtoListener.onProductClick(localDataSet[posicao]);
+            }
+        });
+>>>>>>> Stashed changes
     }
 
     @Override
