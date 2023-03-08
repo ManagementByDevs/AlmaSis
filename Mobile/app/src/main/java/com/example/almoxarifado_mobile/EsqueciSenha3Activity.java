@@ -14,7 +14,7 @@ public class EsqueciSenha3Activity extends AppCompatActivity {
         setContentView(R.layout.activity_senha3);
 
         ImageView buttonPreview = findViewById(R.id.botaoVoltar3);
-        Button buttonConfirm = findViewById(R.id.botaoConfirmar);
+        Button buttonConfirm = findViewById(R.id.btnConfirmar);
 
         buttonPreview.setOnClickListener(v -> {
             Intent intent = new Intent(this, EsqueciSenha2Activity.class);
