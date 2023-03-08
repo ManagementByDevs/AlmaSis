@@ -11,7 +11,7 @@ public class Produto {
     private String nome;
     private String caracteristicas;
     private Boolean descartavel;
-//    private Imagem imagem;
+    private Imagem imagem;
     private Boolean visibilidade;
 
     private Classificacao classificacao;
@@ -111,7 +111,7 @@ public class Produto {
         this.anexos = anexos;
     }
 
-    public Produto(Long id, Integer quantidade, String nome, String caracteristicas, Boolean descartavel, Boolean visibilidade, Classificacao classificacao, Set<Localizacao> localizacoes, List<Anexo> anexos) {
+    public Produto(Long id, Integer quantidade, String nome, String caracteristicas, Boolean descartavel, Boolean visibilidade, Classificacao classificacao, ArrayList<Localizacao> localizacoes, List<Anexo> anexos) {
         this.id = id;
         this.quantidade = quantidade;
         this.nome = nome;
