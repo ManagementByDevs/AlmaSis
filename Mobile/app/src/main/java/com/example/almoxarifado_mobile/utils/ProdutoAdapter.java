@@ -10,25 +10,41 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.almoxarifado_mobile.R;
+import com.example.almoxarifado_mobile.entities.Produto;
+
+import java.util.ArrayList;
 
 public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ViewHolder> {
 
-    private String[] localDataSet;
+    private ArrayList<Produto> localDataSet;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private final TextView textView;
+
+        private final TextView nomeProduto;
+        private final TextView qtdProduto;
+        private final TextView textoDescartavel;
 
         public ViewHolder(View view) {
             super(view);
-            textView = (TextView) view.findViewById(R.id.textView);
+            nomeProduto = (TextView) view.findViewById(R.id.nomeProduto);
+            qtdProduto = (TextView) view.findViewById(R.id.qtdValor);
+            textoDescartavel = (TextView) view.findViewById(R.id.textoDescartavel);
         }
 
-        public TextView getTextView() {
-            return textView;
+        public TextView getNomeProduto() {
+            return nomeProduto;
+        }
+
+        public TextView getQtdProduto() {
+            return qtdProduto;
+        }
+
+        public TextView getTextoDescartavel() {
+            return textoDescartavel;
         }
     }
 
-    public ProdutoAdapter(String[] dataSet) {
+    public ProdutoAdapter(ArrayList<Produto> dataSet) {
         localDataSet = dataSet;
     }
 
@@ -42,11 +58,18 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
-        viewHolder.getTextView().setText(localDataSet[position]);
+        viewHolder.getNomeProduto().setText(localDataSet.get(position).getNome());
+        viewHolder.getQtdProduto().setText((localDataSet.get(position).getQuantidade()).toString());
+
+        if (localDataSet.get(position).getDescartavel()) {
+            viewHolder.getTextoDescartavel().setText("Descartável");
+        } else {
+            viewHolder.getTextoDescartavel().setText("Não Descartável");
+        }
     }
 
     @Override
     public int getItemCount() {
-        return localDataSet.length;
+        return localDataSet.size();
     }
 }

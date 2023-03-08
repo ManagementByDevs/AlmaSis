@@ -1,5 +1,6 @@
 package com.example.almoxarifado_mobile;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,7 @@ import com.example.almoxarifado_mobile.service.ProdutoService;
 import com.example.almoxarifado_mobile.service.UsuarioService;
 import com.example.almoxarifado_mobile.utils.ProdutoAdapter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -27,15 +29,20 @@ public class HomeActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private ProdutoAdapter adapter;
-    String[] lista = {"aaaaaa", "bbbbbbb", "ccccccccccc", "dddddddddddddd", "eeeeeeeeeeee", "ffffffffffff", "ggggggggggg"};
+    private ArrayList<Produto> listaProdutos = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        buscarItens();
+//        buscarItens();
+        cadastroAutomatico();
         setRecyclerView();
+    }
+
+    public void cadastroAutomatico() {
+        listaProdutos.add(new Produto(Long.parseLong("1"), 10, "Abraçadeira", "Pequenas", true, true, null, null, null));
     }
 
     public void produto(View view) {
@@ -48,8 +55,12 @@ public class HomeActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        adapter = new ProdutoAdapter(lista);
+        adapter = new ProdutoAdapter(listaProdutos);
         recyclerView.setAdapter(adapter);
+    }
+
+    public void abrirFiltro() {
+        Dialog dialog = new Dialog(this);
     }
 
     private void buscarItens() {
