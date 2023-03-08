@@ -82,7 +82,7 @@
         app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.666" />
+        app:layout_constraintVertical_bias="0.678" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/inputCodigo6"
@@ -172,5 +172,17 @@
         app:layout_constraintBottom_toTopOf="@+id/botaoProximo2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="200dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="23dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputCodigo4"
+        app:srcCompat="@drawable/background_divider_azul" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
