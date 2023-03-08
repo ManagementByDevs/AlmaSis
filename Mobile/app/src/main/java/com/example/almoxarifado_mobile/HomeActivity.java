@@ -8,10 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.almoxarifado_mobile.utils.ProdutoActivity;
 import com.example.almoxarifado_mobile.entities.Produto;
 import com.example.almoxarifado_mobile.service.ProdutoService;
-import com.example.almoxarifado_mobile.service.UsuarioService;
 import com.example.almoxarifado_mobile.utils.ProdutoAdapter;
 
 import java.util.List;
