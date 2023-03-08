@@ -1,4 +1,4 @@
-package com.example.almoxarifado_mobile.utils;
+package com.example.almoxarifado_mobile;
 
 import android.content.Intent;
 import android.os.Bundle;
