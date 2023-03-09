@@ -40,7 +40,6 @@ public class HomeActivity extends AppCompatActivity implements ProdutoListener{
         setRecyclerView();
     }
 
-<<<<<<< Updated upstream
     public void cadastroAutomatico() {
         listaProdutos.add(new Produto(Long.parseLong("1"), 10, "Abraçadeira", "Pequenas", true, true, null, null, null));
     }
@@ -50,18 +49,12 @@ public class HomeActivity extends AppCompatActivity implements ProdutoListener{
         startActivity(switchActivityIntent);
     }
 
-=======
->>>>>>> Stashed changes
     private void setRecyclerView() {
         recyclerView = findViewById(R.id.lista);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-<<<<<<< Updated upstream
-        adapter = new ProdutoAdapter(listaProdutos);
-=======
-        adapter = new ProdutoAdapter(lista, this);
->>>>>>> Stashed changes
+        adapter = new ProdutoAdapter(listaProdutos, this);
         recyclerView.setAdapter(adapter);
     }
 
@@ -90,15 +83,14 @@ public class HomeActivity extends AppCompatActivity implements ProdutoListener{
         });
     }
 
-<<<<<<< Updated upstream
     public void abrirReservas(View view) {
         Intent intent = new Intent(this, ReservasActivity.class);
         startActivity(intent);
-=======
+    }
+
     @Override
-    public void onProductClick(String product) {
+    public void onProductClick(Produto product) {
         Intent switchActivityIntent = new Intent(this, ProdutoActivity.class);
         startActivity(switchActivityIntent);
->>>>>>> Stashed changes
     }
 }
