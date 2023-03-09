@@ -1,19 +1,14 @@
 package com.example.almoxarifado_mobile.utils;
 
-
-import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.almoxarifado_mobile.ProdutoActivity;
 import com.example.almoxarifado_mobile.R;
 import com.example.almoxarifado_mobile.entities.Produto;
 import com.example.almoxarifado_mobile.listeners.ProdutoListener;
