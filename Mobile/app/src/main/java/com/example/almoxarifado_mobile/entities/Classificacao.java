@@ -1,6 +1,8 @@
 package com.example.almoxarifado_mobile.entities;
 
-public class Classificacao {
+import java.io.Serializable;
+
+public class Classificacao implements Serializable {
 
     private Long id;
     private String classificacao;
