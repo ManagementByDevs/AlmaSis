@@ -1,9 +1,12 @@
 package com.example.almoxarifado_mobile;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -30,6 +33,9 @@ public class HomeActivity extends AppCompatActivity implements ProdutoListener{
     private RecyclerView.LayoutManager layoutManager;
     private ProdutoAdapter adapter;
     private ArrayList<Produto> listaProdutos = new ArrayList<>();
+
+    private Dialog modalFiltro;
+    private Boolean[] filtrosAtivos = {false, false, false, false};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,8 +65,56 @@ public class HomeActivity extends AppCompatActivity implements ProdutoListener{
         recyclerView.setAdapter(adapter);
     }
 
-    public void abrirFiltro() {
-        Dialog dialog = new Dialog(this);
+    public void abrirFiltro(View view) {
+        modalFiltro = new Dialog(this);
+        modalFiltro.setContentView(R.layout.filtro_home);
+
+//        modalFiltro.setOnShowListener(new DialogInterface.OnShowListener() {
+//            @Override
+//            public void onShow(DialogInterface dialog) {
+//                ativarCheckboxesFiltro();
+//            }
+//        });
+
+        modalFiltro.show();
+    }
+
+    public void fecharModalFiltro(View view) {
+        modalFiltro.dismiss();
+    }
+
+    public void ativarCheckboxesFiltro() {
+        for (int i = 1; i <= 4; i++) {
+            CheckBox checkbox = receberCheckbox(i);
+            System.out.println(i);
+            checkbox.setChecked(filtrosAtivos[i - 1]);
+
+            Integer posicaoCheckbox = i - 1;
+            checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    if (isChecked) {
+                        filtrosAtivos[posicaoCheckbox] = true;
+                    } else {
+                        filtrosAtivos[posicaoCheckbox] = false;
+                    }
+                }
+            });
+        }
+    }
+
+    public CheckBox receberCheckbox(Integer numero) {
+        switch (numero) {
+            case 1:
+                return (CheckBox) findViewById(R.id.checkbox1);
+            case 2:
+                return (CheckBox) findViewById(R.id.checkBox2);
+            case 3:
+                return (CheckBox) findViewById(R.id.checkBox3);
+            default:
+                return (CheckBox) findViewById(R.id.checkBox4);
+        }
     }
 
     private void buscarItens() {
