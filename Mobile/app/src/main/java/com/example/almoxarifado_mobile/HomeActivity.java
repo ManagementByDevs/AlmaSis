@@ -1,8 +1,10 @@
 package com.example.almoxarifado_mobile;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -32,6 +34,12 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        ImageView button = findViewById(R.id.imagemUserFooter);
+
+        button.setOnClickListener(v -> {
+           modalConfiguracoes(this);
+        });
+        
         buscarItens();
         setRecyclerView();
     }
@@ -48,6 +56,11 @@ public class HomeActivity extends AppCompatActivity {
 
         adapter = new ProdutoAdapter(lista);
         recyclerView.setAdapter(adapter);
+    }
+
+    public void modalConfiguracoes(Context context){
+        ModalConfiguracoes modal = new ModalConfiguracoes(context);
+        modal.show();
     }
 
     private void buscarItens() {

@@ -4,4 +4,9 @@
     <string name="entrar"><u>Entrar</u></string>
     <string name="stringEsqueciSenha">Caro Usuário, enviaremos \num código de verificação no \nseu email para \nidentificação.</string>
     <string name="reenviarCodigo"><u> Reenviar o código </u></string>
+    <string-array name="font_sizes">
+        <item>Pequeno</item>
+        <item>Médio</item>
+        <item>Grande</item>
+    </string-array>
 </resources>
