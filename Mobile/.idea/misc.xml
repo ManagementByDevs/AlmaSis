@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Github/Kenzo Sato/AlmaSis/Mobile/app/src/main/res/drawable/borda_status_reserva.xml" value="0.3828125" />
+        <entry key="..\:/Github/Kenzo Sato/AlmaSis/Mobile/app/src/main/res/layout/activity_home.xml" value="0.25407608695652173" />
+        <entry key="..\:/Github/Kenzo Sato/AlmaSis/Mobile/app/src/main/res/layout/activity_reserva_item.xml" value="0.25" />
+        <entry key="..\:/Github/Kenzo Sato/AlmaSis/Mobile/app/src/main/res/layout/activity_reservas.xml" value="0.36666666666666664" />
         <entry key="..\:/Thigas/Github/AlmaSis/Mobile/app/src/main/res/drawable/cor_botao.xml" value="0.37864583333333335" />
         <entry key="..\:/Thigas/Github/AlmaSis/Mobile/app/src/main/res/layout/activity_cadastro.xml" value="0.3625" />
         <entry key="..\:/Thigas/Github/AlmaSis/Mobile/app/src/main/res/layout/activity_home.xml" value="0.3625" />

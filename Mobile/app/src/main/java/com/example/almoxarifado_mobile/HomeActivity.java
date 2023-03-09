@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.almoxarifado_mobile.entities.Produto;
+import com.example.almoxarifado_mobile.listeners.ProdutoListener;
 import com.example.almoxarifado_mobile.service.ProdutoService;
 import com.example.almoxarifado_mobile.utils.ProdutoAdapter;
 
@@ -25,7 +26,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements ProdutoListener{
 
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
@@ -59,7 +60,7 @@ public class HomeActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        adapter = new ProdutoAdapter(listaProdutos);
+        adapter = new ProdutoAdapter(listaProdutos, this);
         recyclerView.setAdapter(adapter);
     }
 
@@ -134,5 +135,16 @@ public class HomeActivity extends AppCompatActivity {
                 System.out.println(t.getMessage());
             }
         });
+    }
+
+    public void abrirReservas(View view) {
+        Intent intent = new Intent(this, ReservasActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onProductClick(Produto product) {
+        Intent switchActivityIntent = new Intent(this, ProdutoActivity.class);
+        startActivity(switchActivityIntent);
     }
 }
