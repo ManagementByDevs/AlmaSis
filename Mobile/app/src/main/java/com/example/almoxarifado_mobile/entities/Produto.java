@@ -1,10 +1,11 @@
 package com.example.almoxarifado_mobile.entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-public class Produto {
+public class Produto implements Serializable {
 
     private Long id;
     private Integer quantidade;
@@ -121,5 +122,21 @@ public class Produto {
         this.classificacao = classificacao;
         this.localizacoes = localizacoes;
         this.anexos = anexos;
+    }
+
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "id=" + id +
+                ", quantidade=" + quantidade +
+                ", nome='" + nome + '\'' +
+                ", caracteristicas='" + caracteristicas + '\'' +
+                ", descartavel=" + descartavel +
+                ", imagem=" + imagem +
+                ", visibilidade=" + visibilidade +
+                ", classificacao=" + classificacao +
+                ", localizacoes=" + localizacoes +
+                ", anexos=" + anexos +
+                '}';
     }
 }

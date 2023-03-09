@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.almoxarifado_mobile.entities.Classificacao;
 import com.example.almoxarifado_mobile.entities.Produto;
 import com.example.almoxarifado_mobile.listeners.ProdutoListener;
 import com.example.almoxarifado_mobile.service.ProdutoService;
@@ -41,7 +42,7 @@ public class HomeActivity extends AppCompatActivity implements ProdutoListener{
     }
 
     public void cadastroAutomatico() {
-        listaProdutos.add(new Produto(Long.parseLong("1"), 10, "Abraçadeira", "Pequenas", true, true, null, null, null));
+        listaProdutos.add(new Produto(Long.parseLong("1"), 10, "Abraçadeira", "Pequenas", true, true, new Classificacao(Long.parseLong("1"),"Elétrico"), null, null));
     }
 
     public void produto(View view) {
@@ -91,6 +92,8 @@ public class HomeActivity extends AppCompatActivity implements ProdutoListener{
     @Override
     public void onProductClick(Produto product) {
         Intent switchActivityIntent = new Intent(this, ProdutoActivity.class);
+        switchActivityIntent.putExtra("produto", product);
+
         startActivity(switchActivityIntent);
     }
 }
