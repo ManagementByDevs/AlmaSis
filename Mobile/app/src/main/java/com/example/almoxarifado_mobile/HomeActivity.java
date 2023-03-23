@@ -33,7 +33,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class HomeActivity extends AppCompatActivity implements ProdutoListener{
+public class HomeActivity extends AppCompatActivity implements ProdutoListener, ModalFiltro.OnArrayChangedListener {
 
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
@@ -47,13 +47,6 @@ public class HomeActivity extends AppCompatActivity implements ProdutoListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-        ImageView button = findViewById(R.id.imagemUserFooter);
-
-        button.setOnClickListener(v -> {
-           modalConfiguracoes(this);
-        });
-
 //        buscarItens();
         cadastroAutomatico();
         setRecyclerView();
@@ -78,53 +71,14 @@ public class HomeActivity extends AppCompatActivity implements ProdutoListener{
     }
 
 
-    public void modalConfiguracoes(Context context) {
-        ModalConfiguracoes modal = new ModalConfiguracoes(context);
+    public void abrirConfiguracoes(View view) {
+        ModalConfiguracoes modal = new ModalConfiguracoes(this);
         modal.show();
     }
 
-    public void abrirFiltro() {
-        Dialog dialog = new Dialog(this);
-
-    }
-
     public void abrirFiltro(View view) {
-        modalFiltro = new Dialog(this);
-        modalFiltro.setContentView(R.layout.filtro_home);
-
-//        modalFiltro.setOnShowListener(new DialogInterface.OnShowListener() {
-//            @Override
-//            public void onShow(DialogInterface dialog) {
-//                ativarCheckboxesFiltro();
-//            }
-//        });
-
+        ModalFiltro modalFiltro = new ModalFiltro(this, filtrosAtivos, this);
         modalFiltro.show();
-    }
-
-    public void fecharModalFiltro(View view) {
-        modalFiltro.dismiss();
-    }
-
-    public void ativarCheckboxesFiltro() {
-        for (int i = 1; i <= 4; i++) {
-            CheckBox checkbox = receberCheckbox(i);
-            System.out.println(i);
-            checkbox.setChecked(filtrosAtivos[i - 1]);
-
-            Integer posicaoCheckbox = i - 1;
-            checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-
-                @Override
-                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    if (isChecked) {
-                        filtrosAtivos[posicaoCheckbox] = true;
-                    } else {
-                        filtrosAtivos[posicaoCheckbox] = false;
-                    }
-                }
-            });
-        }
     }
 
     public CheckBox receberCheckbox(Integer numero) {
@@ -173,5 +127,10 @@ public class HomeActivity extends AppCompatActivity implements ProdutoListener{
         switchActivityIntent.putExtra("produto", product);
 
         startActivity(switchActivityIntent);
+    }
+
+    @Override
+    public void onArrayChanged(Boolean[] newArray) {
+        this.filtrosAtivos = newArray;
     }
 }

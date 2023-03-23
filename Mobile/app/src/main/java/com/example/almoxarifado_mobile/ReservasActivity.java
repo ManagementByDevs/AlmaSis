@@ -1,6 +1,8 @@
 package com.example.almoxarifado_mobile;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -55,7 +57,6 @@ public class ReservasActivity extends AppCompatActivity {
         setRecyclerView();
     }
 
-
     private void setRecyclerView() {
         recyclerView = findViewById(R.id.lista);
         layoutManager = new LinearLayoutManager(this);
@@ -65,4 +66,28 @@ public class ReservasActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
+    public void abrirStatusHelper(View view) {
+        ImageView statusHelper = findViewById(R.id.statusHelper);
+
+        // Aparentemente tem como colocar uma lista de drawable para uma imageview
+        // **or drawables that change state like StateListDrawable and LevelListDrawable this will be the child drawable currently in use.**
+        String tagInterrogacao = "sinal_de_interrogacao";
+        String tagFechar = "fechar_circular_azul";
+        if (statusHelper.getTag().equals(tagInterrogacao)) {
+            statusHelper.setImageDrawable(getDrawable(R.drawable.fechar_circular_azul));
+            statusHelper.setTag(tagFechar);
+            openStatusSubtitles();
+        } else {
+            statusHelper.setImageDrawable(getDrawable(R.drawable.sinal_de_interrogacao));
+            statusHelper.setTag(tagInterrogacao);
+            closeStatusSubtitles();
+        }
+    }
+
+    private void openStatusSubtitles() {
+
+    }
+
+    private void closeStatusSubtitles() {
+    }
 }
