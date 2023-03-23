@@ -103,6 +103,7 @@
             android:id="@+id/imagemUserFooter"
             android:layout_width="66dp"
             android:layout_height="79dp"
+            android:onClick="abrirConfiguracoes"
             app:layout_constraintEnd_toEndOf="@+id/divider3"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
