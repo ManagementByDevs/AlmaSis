@@ -3,6 +3,7 @@ package com.example.almoxarifado_mobile;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -23,8 +24,20 @@ public class ProdutoActivity extends AppCompatActivity {
 
         TextView nomeProduto = (TextView) findViewById(R.id.nomeTxt);
         nomeProduto.setText(produto.getNome());
+        TextView textoDescartavel = (TextView) findViewById(R.id.textoDescartavel);
+        if(produto.getDescartavel()) {
+            textoDescartavel.setText("Descartável");
+        } else {
+            textoDescartavel.setText("Não Descartável");
+        }
+        TextView classificacao = (TextView) findViewById(R.id.classificacao);
+        classificacao.setText(produto.getClassificacao().getClassificacao());
 
+    }
 
-
+    public void reservar(View view) {
+        finish();
+        Intent switchActivityIntent = new Intent(this, ProdutoActivity.class);
+        startActivity(switchActivityIntent);
     }
 }

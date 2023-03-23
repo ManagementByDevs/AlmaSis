@@ -88,7 +88,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/textoDescartavel"
         android:layout_width="221dp"
         android:layout_height="26dp"
         android:layout_marginStart="16dp"
@@ -180,7 +180,7 @@
         app:srcCompat="?attr/actionModeSelectAllDrawable" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/classificacao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -193,11 +193,12 @@
         app:layout_constraintTop_toBottomOf="@+id/imageButton" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/botaoReservar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:text="Reservar"
+        android:onClick="reservar"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -250,11 +251,11 @@
         android:text="Retirada"
         android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/editTextDate"
+        app:layout_constraintBottom_toTopOf="@+id/dataRetiradaInput"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextDate"
+        android:id="@+id/dataRetiradaInput"
         android:layout_width="135dp"
         android:layout_height="49dp"
         android:layout_marginBottom="8dp"
