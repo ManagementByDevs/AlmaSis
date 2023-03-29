@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -24,6 +25,7 @@ public class ReservasActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager;
     private ReservaAdapter adapter;
     ArrayList<Reserva> lista = new ArrayList<>();
+    private ConstraintLayout containerStatusHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,9 @@ public class ReservasActivity extends AppCompatActivity {
         lista.add(reserva);
         lista.add(reserva);
         lista.add(reserva);
+
+        containerStatusHelper = findViewById(R.id.containerStatusHelper);
+        containerStatusHelper.setVisibility(View.GONE);
 
         setRecyclerView();
     }
@@ -85,9 +90,11 @@ public class ReservasActivity extends AppCompatActivity {
     }
 
     private void openStatusSubtitles() {
+        containerStatusHelper.setVisibility(View.VISIBLE);
 
     }
 
     private void closeStatusSubtitles() {
+        containerStatusHelper.setVisibility(View.GONE);
     }
 }

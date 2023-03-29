@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.almoxarifado_mobile.R;
 import com.example.almoxarifado_mobile.entities.Reserva;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.ViewHolder> {
@@ -23,9 +24,9 @@ public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.ViewHold
 
         public ViewHolder(View view) {
             super(view);
-//            dataRetirada = (TextView) view.findViewById(R.id.dataRetirada);
-//            dataDevolucao = (TextView) view.findViewById(R.id.dataDevolucao);
-//            itensValue = (TextView) view.findViewById(R.id.itensValue);
+            dataRetirada = (TextView) view.findViewById(R.id.dataRetirada);
+            dataDevolucao = (TextView) view.findViewById(R.id.dataDevolucao);
+            itensValue = (TextView) view.findViewById(R.id.itensValue);
         }
 
         public TextView getDataRetirada() {
@@ -55,9 +56,10 @@ public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(ReservaAdapter.ViewHolder viewHolder, int position) {
-//        viewHolder.getDataDevolucao().setText(localDataSet.get(position).getDataDevoluçao().toString());
-//        viewHolder.getDataRetirada().setText(localDataSet.get(position).getDataRetirada().toString());
-//        viewHolder.getItensValue().setText(localDataSet.get(position).getListaProdutos().size());
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        viewHolder.getDataDevolucao().setText(simpleDateFormat.format(localDataSet.get(position).getDataDevoluçao()));
+        viewHolder.getDataRetirada().setText(simpleDateFormat.format(localDataSet.get(position).getDataRetirada()));
+        viewHolder.getItensValue().setText(String.valueOf(localDataSet.get(position).getListaProdutos().size()));
     }
 
     @Override
