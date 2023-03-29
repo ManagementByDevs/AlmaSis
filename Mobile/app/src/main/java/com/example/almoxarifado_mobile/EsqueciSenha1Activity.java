@@ -3,7 +3,9 @@ package com.example.almoxarifado_mobile;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,8 +25,11 @@ public class EsqueciSenha1Activity extends AppCompatActivity {
         });
 
         buttonNext.setOnClickListener(v -> {
-            Intent intent2 = new Intent(this, EsqueciSenha2Activity.class);
-            startActivity(intent2);
+            String email = ((EditText) findViewById(R.id.inputRecuperarEmail)).toString();
+            if(!email.equals("")) {
+                Intent intent2 = new Intent(this, EsqueciSenha2Activity.class);
+                startActivity(intent2);
+            }
         });
     }
 }

@@ -81,20 +81,6 @@ public class HomeActivity extends AppCompatActivity implements ProdutoListener, 
         modalFiltro.show();
     }
 
-    public CheckBox receberCheckbox(Integer numero) {
-        switch (numero) {
-            case 1:
-                return (CheckBox) findViewById(R.id.checkbox1);
-            case 2:
-                return (CheckBox) findViewById(R.id.checkBox2);
-            case 3:
-                return (CheckBox) findViewById(R.id.checkBox3);
-            default:
-                return (CheckBox) findViewById(R.id.checkBox4);
-        }
-
-    }
-
     private void buscarItens() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://localhost:8080/alma_sis/")

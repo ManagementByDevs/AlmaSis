@@ -49,12 +49,11 @@
         android:id="@+id/botaoProximo2"
         android:layout_width="103dp"
         android:layout_height="98dp"
-        android:layout_marginStart="155dp"
-        android:layout_marginEnd="154dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginEnd="150dp"
         android:layout_marginBottom="56dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/seta_direita" />
 
@@ -63,12 +62,14 @@
         style="@style/cadastrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="408dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
         android:text="Insira o código"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/inputCodigo4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
     <TextView
         android:id="@+id/textView13"

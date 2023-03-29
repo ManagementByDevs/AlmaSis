@@ -61,6 +61,8 @@ public class CadastroActivity extends AppCompatActivity {
     }
 
     public void cadastrar(View view) {
-
+        finish();
+        Intent switchActivityIntent = new Intent(this, MainActivity.class);
+        startActivity(switchActivityIntent);
     }
 }

@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class EsqueciSenha2Activity extends AppCompatActivity {
 
+    private Integer timer = 300;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
