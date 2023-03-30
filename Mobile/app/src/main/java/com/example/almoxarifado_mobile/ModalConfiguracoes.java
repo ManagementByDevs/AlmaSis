@@ -14,7 +14,7 @@ public class ModalConfiguracoes extends Dialog {
 
     private TextView mTitle;
     private TextView mMessage;
-    private Button mButton;
+    private Button saveButton;
 
     public ModalConfiguracoes(Context context) {
         super(context);
@@ -24,12 +24,12 @@ public class ModalConfiguracoes extends Dialog {
     private void init() {
         setContentView(R.layout.modal_configuracoes);
 
-        mButton = findViewById(R.id.dialog_save_button);
+        saveButton = findViewById(R.id.dialog_save_button);
 
         Switch darkModeSwitch = findViewById(R.id.dark_mode_switch);
         boolean isDarkModeEnabled = darkModeSwitch.isChecked();
 
-        mButton.setOnClickListener(new View.OnClickListener() {
+        saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dismiss();
@@ -46,7 +46,7 @@ public class ModalConfiguracoes extends Dialog {
     }
 
     public void setButtonText(String text) {
-        mButton.setText(text);
+        saveButton.setText(text);
     }
 
 }

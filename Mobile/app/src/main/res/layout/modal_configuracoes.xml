@@ -3,13 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="350dp"
-    android:layout_height="325dp"
+    android:layout_height="320dp"
     >
 
     <TextView
         android:id="@+id/dark_mode_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="184dp"
         android:text="Modo escuro:"
         android:textColor="#0047B6"
         android:textSize="20sp"
@@ -60,6 +62,7 @@
         android:layout_below="@id/font_size_label"
         android:entries="@array/font_sizes"
         android:spinnerMode="dropdown"
+        style=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.421"
