@@ -20,6 +20,7 @@ public class EsqueciSenha1Activity extends AppCompatActivity {
         ImageView buttonNext = findViewById(R.id.botaoProximo);
 
         buttonPreview.setOnClickListener(v -> {
+            finish();
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         });

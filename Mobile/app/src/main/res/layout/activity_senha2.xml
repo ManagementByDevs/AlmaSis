@@ -51,7 +51,7 @@
         android:layout_height="98dp"
         android:layout_marginStart="150dp"
         android:layout_marginEnd="150dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,25 +72,26 @@
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/timer"
         style="@style/cadastrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="26dp"
-        android:text="30s restantes"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="5m restantes"
+        app:layout_constraintBottom_toTopOf="@+id/textView14"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.678" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView10" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/inputCodigo6"
+        style="@style/quadradoInputCodigo"
         android:layout_width="41dp"
         android:layout_height="46dp"
-        android:gravity="center"
         android:background="@drawable/borda_input"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.875"
@@ -100,10 +101,11 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/inputCodigo1"
+        style="@style/quadradoInputCodigo"
         android:layout_width="41dp"
         android:layout_height="46dp"
-        android:gravity="center"
         android:background="@drawable/borda_input"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.121"
@@ -113,10 +115,11 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/inputCodigo4"
+        style="@style/quadradoInputCodigo"
         android:layout_width="41dp"
         android:layout_height="46dp"
-        android:gravity="center"
         android:background="@drawable/borda_input"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.57"
@@ -126,10 +129,11 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/inputCodigo5"
+        style="@style/quadradoInputCodigo"
         android:layout_width="41dp"
         android:layout_height="46dp"
-        android:gravity="center"
         android:background="@drawable/borda_input"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.729"
@@ -139,10 +143,11 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/inputCodigo2"
+        style="@style/quadradoInputCodigo"
         android:layout_width="41dp"
         android:layout_height="46dp"
-        android:gravity="center"
         android:background="@drawable/borda_input"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.264"
@@ -152,10 +157,11 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/inputCodigo3"
+        style="@style/quadradoInputCodigo"
         android:layout_width="41dp"
         android:layout_height="46dp"
-        android:gravity="center"
         android:background="@drawable/borda_input"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.418"
@@ -168,7 +174,7 @@
         style="@style/reenviarCodigo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="40dp"
         android:text="@string/reenviarCodigo"
         app:layout_constraintBottom_toTopOf="@+id/botaoProximo2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -179,8 +185,7 @@
         android:layout_width="200dp"
         android:layout_height="2dp"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="23dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView13"
+        app:layout_constraintBottom_toTopOf="@+id/timer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputCodigo4"

@@ -2,15 +2,15 @@ package com.example.almoxarifado_mobile;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.text.InputFilter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class EsqueciSenha2Activity extends AppCompatActivity {
-
-    private Integer timer = 300;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +40,7 @@ public class EsqueciSenha2Activity extends AppCompatActivity {
         ImageView buttonNext = findViewById(R.id.botaoProximo2);
 
         button.setOnClickListener(v -> {
+            finish();
             Intent intent = new Intent(this, EsqueciSenha1Activity.class);
             startActivity(intent);
         });
@@ -48,5 +49,39 @@ public class EsqueciSenha2Activity extends AppCompatActivity {
             Intent intent2 = new Intent(this, EsqueciSenha3Activity.class);
             startActivity(intent2);
         });
+
+        ativarInputsCodigo();
+
+        new CountDownTimer(300000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                long segundosFaltantes = millisUntilFinished / 1000;
+                TextView textoTimer = findViewById(R.id.timer);
+                textoTimer.setText(formatarTempoTimer(segundosFaltantes));
+            }
+
+            public void onFinish() {
+                TextView textoTimer = findViewById(R.id.timer);
+                textoTimer.setText("Código Esgotado!");
+            }
+        }.start();
+    }
+
+    private String formatarTempoTimer(Long tempoTimer) {
+        String textoFinal = "";
+        if(tempoTimer / 60 > 0) {
+            textoFinal += tempoTimer / 60;
+            textoFinal += "m ";
+        }
+        if(tempoTimer % 60 > 0) {
+            textoFinal += tempoTimer % 60;
+            textoFinal += "s ";
+        }
+        textoFinal += "restantes";
+        return textoFinal;
+    }
+
+    private void ativarInputsCodigo() {
+        
     }
 }

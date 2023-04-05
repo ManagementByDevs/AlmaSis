@@ -17,11 +17,13 @@ public class EsqueciSenha3Activity extends AppCompatActivity {
         Button buttonConfirm = findViewById(R.id.btnConfirmar);
 
         buttonPreview.setOnClickListener(v -> {
+            finish();
             Intent intent = new Intent(this, EsqueciSenha2Activity.class);
             startActivity(intent);
         });
 
         buttonConfirm.setOnClickListener(v -> {
+            finish();
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         });
