@@ -7,17 +7,17 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class EsqueciSenha3Activity extends AppCompatActivity {
+public class EsqueciSenhaPasso3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_senha3);
+        setContentView(R.layout.esqueci_senha3);
 
         ImageView buttonPreview = findViewById(R.id.botaoVoltar3);
         Button buttonConfirm = findViewById(R.id.btnConfirmar);
 
         buttonPreview.setOnClickListener(v -> {
-            Intent intent = new Intent(this, EsqueciSenha2Activity.class);
+            Intent intent = new Intent(this, EsqueciSenhaPasso2.class);
             startActivity(intent);
         });
 

@@ -8,14 +8,14 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class EsqueciSenha2Activity extends AppCompatActivity {
+public class EsqueciSenhaPasso2 extends AppCompatActivity {
 
     private Integer timer = 300;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_senha2);
+        setContentView(R.layout.esqueci_senha2);
 
         // Aceitar apenas um caractere no input do código de verificação
 
@@ -40,12 +40,12 @@ public class EsqueciSenha2Activity extends AppCompatActivity {
         ImageView buttonNext = findViewById(R.id.botaoProximo2);
 
         button.setOnClickListener(v -> {
-            Intent intent = new Intent(this, EsqueciSenha1Activity.class);
+            Intent intent = new Intent(this, EsqueciSenhaPasso1.class);
             startActivity(intent);
         });
 
         buttonNext.setOnClickListener(v -> {
-            Intent intent2 = new Intent(this, EsqueciSenha3Activity.class);
+            Intent intent2 = new Intent(this, EsqueciSenhaPasso3.class);
             startActivity(intent2);
         });
     }

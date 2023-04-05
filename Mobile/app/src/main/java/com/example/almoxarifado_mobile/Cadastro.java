@@ -9,7 +9,7 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class CadastroActivity extends AppCompatActivity {
+public class Cadastro extends AppCompatActivity {
 
     private Boolean senhaVisivel1 = false;
     private Boolean senhaVisivel2 = false;
@@ -17,7 +17,7 @@ public class CadastroActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadastro);
+        setContentView(R.layout.cadastro);
     }
 
     public void mudarSenha(View view) {

@@ -76,6 +76,11 @@ public class HomeActivity extends AppCompatActivity implements ProdutoListener, 
         modal.show();
     }
 
+    public void abrirClassificacoes(View view) {
+        ModalClassificacoes modal = new ModalClassificacoes(this);
+        modal.show();
+    }
+
     public void abrirFiltro(View view) {
         ModalFiltro modalFiltro = new ModalFiltro(this, filtrosAtivos, this);
         modalFiltro.show();

@@ -5,16 +5,10 @@ import android.content.Context;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Switch;
-import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
 public class ModalConfiguracoes extends Dialog {
 
-    private TextView mTitle;
-    private TextView mMessage;
-    private Button saveButton;
+    private Button saveButton, cancelButton;
 
     public ModalConfiguracoes(Context context) {
         super(context);
@@ -25,9 +19,9 @@ public class ModalConfiguracoes extends Dialog {
         setContentView(R.layout.modal_configuracoes);
 
         saveButton = findViewById(R.id.dialog_save_button);
+        cancelButton = findViewById(R.id.dialog_cancel_button);
 
         Switch darkModeSwitch = findViewById(R.id.dark_mode_switch);
-        boolean isDarkModeEnabled = darkModeSwitch.isChecked();
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,14 +29,11 @@ public class ModalConfiguracoes extends Dialog {
                 dismiss();
             }
         });
-    }
 
-    public void setTitle(String title) {
-        mTitle.setText(title);
-    }
-
-    public void setMessage(String message) {
-        mMessage.setText(message);
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {dismiss();}
+        });
     }
 
     public void setButtonText(String text) {

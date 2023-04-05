@@ -3,7 +3,6 @@ package com.example.almoxarifado_mobile;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
@@ -37,12 +36,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void cadastro(View view) {
-        Intent switchActivityIntent = new Intent(this, CadastroActivity.class);
+        Intent switchActivityIntent = new Intent(this, Cadastro.class);
         startActivity(switchActivityIntent);
     }
 
     public void esqueciSenha(View view) {
-        Intent switchActivityIntent = new Intent(this, EsqueciSenha1Activity.class);
+        Intent switchActivityIntent = new Intent(this, EsqueciSenhaPasso1.class);
         startActivity(switchActivityIntent);
     }
 
