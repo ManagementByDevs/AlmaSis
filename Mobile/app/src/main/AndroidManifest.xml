@@ -22,11 +22,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".HomeActivity"></activity>
-        <activity android:name=".CadastroActivity"></activity>
+        <activity android:name=".Cadastro"></activity>
         <activity android:name=".ProdutoActivity"></activity>
-        <activity android:name=".EsqueciSenha1Activity"></activity>
-        <activity android:name=".EsqueciSenha2Activity"></activity>
-        <activity android:name=".EsqueciSenha3Activity"></activity>
+        <activity android:name=".EsqueciSenhaPasso1"></activity>
+        <activity android:name=".EsqueciSenhaPasso2"></activity>
+        <activity android:name=".EsqueciSenhaPasso3"></activity>
         <activity android:name=".ReservasActivity" />
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
